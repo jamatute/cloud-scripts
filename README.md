@@ -2,7 +2,24 @@
 
 This repo is for small cloud related scripts.
 
+## Install
+
+Clone the repository
+
+```bash
+git clone https://github.com/jamatute/cloud-scripts
+```
+
+Install the dependencies
+
+```bash
+pip3 install -r requirements.txt
+```
+
+And add the desired programs to your `$PATH`
+
 ## AWS
+
 
 ### edit_ami
 
