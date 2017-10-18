@@ -67,6 +67,10 @@ def main(argv):
         lc = ec2a.describe_launch_configurations(
                  LaunchConfigurationNames=[asg['lc']])
         lc = lc['LaunchConfigurations'][0]
+        try:
+            lc['IamInstanceProfile']
+        except KeyError:
+            lc['IamInstanceProfile'] = ''
 
         instance = ec2.create_instances(
             ImageId=lc['ImageId'],
