@@ -89,6 +89,8 @@ def main(argv):
         print('* Launched instance {}'.format(instance.id))
         print('  Private IP: {}'.format(instance.private_ip_address))
         print('  Public IP: {}'.format(instance.public_ip_address))
+        instance.security_groups.clear()
+        instance.modify_attribute(Groups=lc['SecurityGroups'])
         instance.wait_until_running()
         print('\nThe instance is running :)')
 
